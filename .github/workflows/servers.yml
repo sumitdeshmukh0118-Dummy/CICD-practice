@@ -1,0 +1,27 @@
+name: server
+
+on:
+  workflow_dispatch: 
+
+jobs: 
+  servers:
+     runs-on: ubuntu-latest
+     steps:
+       - name: update system
+         run: sudo apt-get update
+
+  install:
+       needs: [servers]
+       runs-on: ubuntu-latest
+       steps:
+          - name: install the nginx
+            run: sudo apt-get install nginx
+
+  version:
+      needs: 
+        - servers
+        - install
+      runs-on: ubuntu-latest
+      steps:
+        - name: check version
+          run: nginx --version 
