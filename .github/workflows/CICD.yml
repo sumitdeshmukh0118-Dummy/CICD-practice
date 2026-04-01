@@ -1,0 +1,13 @@
+name: CICD
+
+on:
+  workflow_dispatch: 
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+    - name: enter the username
+      run: echo "enter the username"
+    - name: print user name
+      run: echo "user name $USER"
+
