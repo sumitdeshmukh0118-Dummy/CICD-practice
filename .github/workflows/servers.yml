@@ -24,4 +24,4 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: check version
-          run: nginx --version 
+          run: nginx -v
