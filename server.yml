@@ -1,0 +1,15 @@
+name: server
+
+jobs: 
+  servers:
+     runs-on: ubuntu-latest
+     steps:
+       - name: update system
+         run: sudo apt-get update
+
+  install:
+    needs: [servers]
+     runs-on: ubuntu-latest
+       - name: install the nginx
+         run: sudo apt-get install nginx
+         
